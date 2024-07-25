@@ -61,7 +61,6 @@ class PriceOyeSpider(scrapy.Spider):
         for section in specification_sections:
             specification_category_title = section.css('thead th::text').get(default='N/A').strip()
             product_specifications[specification_category_title] = {}
-
             specification_rows = section.css('tbody tr')
             for specification_row in specification_rows:
                 key = specification_row.css('th::text').get(default='N/A').strip()
