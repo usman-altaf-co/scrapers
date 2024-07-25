@@ -46,7 +46,6 @@ class PriceOyeSpider(scrapy.Spider):
         image_url = response.meta['image_url']
 
         product_specifications = self.extract_product_specifications(response)
-
         yield {
             'product_title': product_title,
             'price': price,
@@ -70,3 +69,8 @@ class PriceOyeSpider(scrapy.Spider):
                 product_specifications[specification_category_title][key] = value
 
         return product_specifications
+
+
+
+
+
